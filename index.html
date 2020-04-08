@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title> Interest Calculator </title>
+        <body>
+            <script>
+                let Data = [{principle: 2500, time: 1.8}, {principle: 1000, time: 5}, {principle: 3000, time: 1}, {principle: 2000, time: 3}]
+                function InterestCalculator (data) {
+                    for (let i of data) {
+                    if (i.principle >= 2500 && (i.time > 1 && i.time < 3)) {
+                        i.rate = 3;
+                    }   
+                    else if (i.principle >= 2500 & i.time >= 3) {
+                        i.rate = 4;
+                    }
+                    else if (i.principle < 2500 || i.time >= 3 ) {
+                        i.rate = 2;
+                    }
+                    else
+                    {
+                        i.rate = 1;
+                    }
+                    i.interest = (i.principle * i.rate * i.time) / 100;
+                    }
+                    let interestData = [data];
+                    console.log(interestData);
+                    return interestData;
+                }
+            let x = InterestCalculator(Data);
+            console.log(x);    
+            </script>    
+        </body>
+    </head>
+</html>
